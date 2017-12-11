@@ -21,4 +21,11 @@
 4   mainapp/views.py                    del     # def index(request):
 4   mainapp/views.py                    add     # def index(request):
                                                     return render(request, 'index.html')
+5   mainapp/views.py                    add     # text = 'Write this text'
+5   mainapp/views.py                    add     # value = '13456'
+5   mainapp/views.py                    add     # context = {'mainapp_text':text,
+                                                            'mainapp_value':value}
+5   mainapp/views.py                    change  # return render(request,'index.html, context)
+5   mainapp/templates/index.html        add     # <p>{{mainapp_text}}</p>
+5   mainapp/templates/index.html        add     # <p>{{mainapp_value}}</p>
 
