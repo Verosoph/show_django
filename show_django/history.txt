@@ -1,0 +1,24 @@
+1   mainapp/views.py                    add     # from django.http import HttpResponse
+1   mainapp/views.py                    add     # def index(request):
+                                                    return HttpResponse('<h1>Hello World !</h1>')
+1   show_django/urls.py                 add     # from mainapp import views
+1   show_django/urls.py                 add     # url(r'^index/', views.index),     
+
+2   show_django/urls.py                 add     # url(r'^marmet/', views.marmet),              
+2   show_django/urls.py                 add     # url(r'^', views.index), 
+
+3   mainapp/urls.py                     create
+3   mainapp/urls.py                     add     # from django.conf.urls import url
+3   mainapp/urls.py                     add     # from . import views
+3   show_django/urls.py                 change  # from django.conf.urls import url, include
+3   show_django/urls.py                 add     # url(r'^',include('mainapp.urls')),
+
+4   mainapp/templates/                  create
+4   show_django/settings.py             add     # 'mainapp',        -> under INSTALLED_APPS = [
+4   mainapp/templates/index.html        create
+4   mainapp/templates/index.html        add     # html-code
+4   mainapp/views.py                    del     # from django-http import HttpResponse
+4   mainapp/views.py                    del     # def index(request):
+4   mainapp/views.py                    add     # def index(request):
+                                                    return render(request, 'index.html')
+
