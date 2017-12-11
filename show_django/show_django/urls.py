@@ -1,12 +1,9 @@
-from django.contrib import admin
-from django.urls import path                    
-from django.conf.urls import url                #add
-from mainapp import views                       #add
+from django.contrib import admin                
+from django.conf.urls import url, include                #change includes the url.py in the mainapp
+#from mainapp import views                                # del - dont need anymore
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url(r'^index/', views.index),               #add
-    url(r'^marmet/', views.marmet),               #add
-    
-]
+    url(r'^admin/', admin.site.urls),     
+    url(r'^',include('mainapp.urls')),        
+ ]
