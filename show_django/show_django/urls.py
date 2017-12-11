@@ -1,12 +1,11 @@
 from django.contrib import admin
-from django.urls import path                    
 from django.conf.urls import url                #add
 from mainapp import views                       #add
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url(r'^index/', views.index),               #add
-    url(r'^marmet/', views.marmet),               #add
-    
+    url(r'^admin/', admin.site.urls),             #change
+    url(r'^index/', views.index),                 #add localhost:8000/index will show the httpRespons in the def index in views.py
+    url(r'^marmet/', views.marmet),               #add localhost:8000/marmet will show the httpRespons in the def marmet in views.py
+    url(r'^', views.index),                       #add localhost:8000 will also show the httpResponse which you can find in views.py
 ]
