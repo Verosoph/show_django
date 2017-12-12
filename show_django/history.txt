@@ -29,3 +29,20 @@
 5   mainapp/templates/index.html        add     # <p>{{mainapp_text}}</p>
 5   mainapp/templates/index.html        add     # <p>{{mainapp_value}}</p>
 
+6   mainapp/views.py                    del     # text = 'Write this text'
+6   mainapp/views.py                    del     # value = '13456'
+6   mainapp/views.py                    del     # context = {'mainapp_text':text,
+                                                            'mainapp_value':value}
+6   mainapp/views.py                    change  # return render(request,'index.html',{'datas':datas})                                                                
+6   mainapp/views.py                    add     # class Data:                                                
+6   mainapp/views.py                    add     # def __init__(self, name, value, location):             
+6   mainapp/views.py                    add     # self.name=name                                     
+6   mainapp/views.py                    add     # self.value = value                                 
+6   mainapp/views.py                    add     # self.location = location                            
+
+6   mainapp/views.py                    add     # datas = [                                                    
+6   mainapp/views.py                    add     # Data('one',1,'NM'),                                     
+6   mainapp/views.py                    add     # Data('two',2,'CO'),                                      
+6   mainapp/views.py                    add     # Data('three',3,'CA') ]                                                          
+           
+
